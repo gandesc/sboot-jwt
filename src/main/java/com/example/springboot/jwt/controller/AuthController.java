@@ -1,5 +1,6 @@
 package com.example.springboot.jwt.controller;
 
+import com.example.springboot.jwt.WebSecurityConfig;
 import com.example.springboot.jwt.controller.resource.LoginResult;
 import com.example.springboot.jwt.security.JwtHelper;
 import org.springframework.http.HttpStatus;
@@ -54,7 +55,7 @@ public class AuthController {
             String authorities = userDetails.getAuthorities().stream()
                     .map(GrantedAuthority::getAuthority)
                     .collect(Collectors.joining(" "));
-            claims.put("authorities", authorities);
+            claims.put(WebSecurityConfig.AUTHORITIES_CLAIM_NAME, authorities);
             claims.put("userId", String.valueOf(1));
 
             String jwt = jwtHelper.createJwtForClaims(username, claims);
