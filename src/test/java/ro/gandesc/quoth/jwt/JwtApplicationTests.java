@@ -1,4 +1,4 @@
-package com.example.springboot.jwt;
+package ro.gandesc.quoth.jwt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

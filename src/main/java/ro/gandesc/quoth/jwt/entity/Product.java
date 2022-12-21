@@ -1,4 +1,4 @@
-package com.example.springboot.jwt.entity;
+package ro.gandesc.quoth.jwt.entity;
 
 public class Product {
 

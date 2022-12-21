@@ -1,6 +1,6 @@
-package com.example.springboot.jwt.service;
+package ro.gandesc.quoth.jwt.service;
 
-import com.example.springboot.jwt.entity.Product;
+import ro.gandesc.quoth.jwt.entity.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

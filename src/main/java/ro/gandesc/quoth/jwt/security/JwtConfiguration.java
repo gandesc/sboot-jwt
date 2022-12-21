@@ -1,4 +1,4 @@
-package com.example.springboot.jwt.security;
+package ro.gandesc.quoth.jwt.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

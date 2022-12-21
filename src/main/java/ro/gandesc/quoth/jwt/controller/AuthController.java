@@ -1,8 +1,8 @@
-package com.example.springboot.jwt.controller;
+package ro.gandesc.quoth.jwt.controller;
 
-import com.example.springboot.jwt.WebSecurityConfig;
-import com.example.springboot.jwt.controller.resource.LoginResult;
-import com.example.springboot.jwt.security.JwtHelper;
+import ro.gandesc.quoth.jwt.WebSecurityConfig;
+import ro.gandesc.quoth.jwt.controller.resource.LoginResult;
+import ro.gandesc.quoth.jwt.security.JwtHelper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.GrantedAuthority;

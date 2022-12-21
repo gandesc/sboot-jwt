@@ -1,4 +1,4 @@
-package com.example.springboot.jwt.security;
+package ro.gandesc.quoth.jwt.security;
 
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;

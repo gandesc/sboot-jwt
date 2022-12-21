@@ -1,4 +1,4 @@
-package com.example.springboot.jwt.controller;
+package ro.gandesc.quoth.jwt.controller;
 
 import java.util.Map;
 

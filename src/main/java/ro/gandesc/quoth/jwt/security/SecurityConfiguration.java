@@ -1,4 +1,4 @@
-package com.example.springboot.jwt.security;
+package ro.gandesc.quoth.jwt.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

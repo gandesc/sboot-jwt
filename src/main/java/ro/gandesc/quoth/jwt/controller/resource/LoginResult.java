@@ -1,4 +1,4 @@
-package com.example.springboot.jwt.controller.resource;
+package ro.gandesc.quoth.jwt.controller.resource;
 
 import lombok.Data;
 import lombok.NonNull;
