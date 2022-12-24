@@ -22,4 +22,10 @@ public class Role {
 
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "authority_role",
+            joinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "authority_id", referencedColumnName = "id")})
+    private Set<Role> authorities;
 }
