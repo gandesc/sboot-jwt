@@ -1,4 +1,4 @@
-package ro.gandesc.quoth.jwt.controller;
+package ro.gandesc.quoth.jwt.controllers;
 
 import ro.gandesc.quoth.jwt.domain.Product;
 import ro.gandesc.quoth.jwt.service.ProductService;
