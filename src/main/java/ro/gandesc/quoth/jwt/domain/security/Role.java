@@ -23,6 +23,7 @@ public class Role {
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
+    @Singular
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "authority_role",
             joinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")},
