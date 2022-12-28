@@ -1,5 +1,6 @@
 package ro.gandesc.quoth.jwt.domain.security;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Authority {
 
     private String permission;
 
+    @JsonIgnore //TODO create user dto
     @ManyToMany(mappedBy = "authorities")
     private Set<Role> roles;
 }

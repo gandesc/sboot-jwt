@@ -56,44 +56,44 @@ public class WebSecurityConfig {
         return http.build();
     }
 
-    @Bean
-    protected UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-
-        UserDetails user1 = User
-                .withUsername("user1")
-                .authorities("ADMIN", "STAFF_MEMBER")
-                .passwordEncoder(passwordEncoder::encode)
-                .password("1234")
-                .build();
-        manager.createUser(user1);
-
-        UserDetails user2 = User
-                .withUsername("user2")
-                .authorities("STAFF_MEMBER")
-                .passwordEncoder(passwordEncoder::encode)
-                .password("1234")
-                .build();
-        manager.createUser(user2);
-
-        UserDetails user3 = User
-                .withUsername("user3")
-                .authorities("ASSISTANT_MANAGER", "STAFF_MEMBER")
-                .passwordEncoder(passwordEncoder::encode)
-                .password("1234")
-                .build();
-        manager.createUser(user3);
-
-        UserDetails user4 = User
-                .withUsername("user4")
-                .authorities("MANAGER", "STAFF_MEMBER")
-                .passwordEncoder(passwordEncoder::encode)
-                .password("1234")
-                .build();
-        manager.createUser(user4);
-
-        return manager;
-    }
+//    @Bean
+//    protected UserDetailsService userDetailsService() {
+//        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+//
+//        UserDetails user1 = User
+//                .withUsername("user1")
+//                .authorities("ADMIN", "STAFF_MEMBER")
+//                .passwordEncoder(passwordEncoder::encode)
+//                .password("1234")
+//                .build();
+//        manager.createUser(user1);
+//
+//        UserDetails user2 = User
+//                .withUsername("user2")
+//                .authorities("STAFF_MEMBER")
+//                .passwordEncoder(passwordEncoder::encode)
+//                .password("1234")
+//                .build();
+//        manager.createUser(user2);
+//
+//        UserDetails user3 = User
+//                .withUsername("user3")
+//                .authorities("ASSISTANT_MANAGER", "STAFF_MEMBER")
+//                .passwordEncoder(passwordEncoder::encode)
+//                .password("1234")
+//                .build();
+//        manager.createUser(user3);
+//
+//        UserDetails user4 = User
+//                .withUsername("user4")
+//                .authorities("MANAGER", "STAFF_MEMBER")
+//                .passwordEncoder(passwordEncoder::encode)
+//                .password("1234")
+//                .build();
+//        manager.createUser(user4);
+//
+//        return manager;
+//    }
 
     protected JwtAuthenticationConverter authenticationConverter() {
         JwtGrantedAuthoritiesConverter authoritiesConverter = new JwtGrantedAuthoritiesConverter();
