@@ -1,7 +1,7 @@
-package ro.gandesc.quoth.jwt.controller;
+package ro.gandesc.quoth.jwt.controllers;
 
 import ro.gandesc.quoth.jwt.WebSecurityConfig;
-import ro.gandesc.quoth.jwt.controller.resource.LoginResult;
+import ro.gandesc.quoth.jwt.controllers.resource.LoginResult;
 import ro.gandesc.quoth.jwt.security.JwtHelper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
