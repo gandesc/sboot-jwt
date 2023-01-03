@@ -1,4 +1,4 @@
-package ro.gandesc.quoth.jwt;
+package ro.gandesc.jwt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

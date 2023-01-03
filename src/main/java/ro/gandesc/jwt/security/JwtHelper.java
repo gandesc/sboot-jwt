@@ -1,4 +1,4 @@
-package ro.gandesc.quoth.jwt.security;
+package ro.gandesc.jwt.security;
 
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;

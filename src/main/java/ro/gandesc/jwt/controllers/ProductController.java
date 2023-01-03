@@ -1,7 +1,7 @@
-package ro.gandesc.quoth.jwt.controller;
+package ro.gandesc.jwt.controllers;
 
-import ro.gandesc.quoth.jwt.entity.Product;
-import ro.gandesc.quoth.jwt.service.ProductService;
+import ro.gandesc.jwt.service.ProductService;
+import ro.gandesc.jwt.domain.Product;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package ro.gandesc.quoth.jwt.entity;
+package ro.gandesc.jwt.domain;
 
 public class Product {
 

@@ -13,7 +13,7 @@ ReactJS, Angular, etc...
 ## Getting Started
 
 - Use `./mvnw clean install` in the project root directory to build the project. 
-- Run the main class, `ro.gandesc.quoth.jwt.JwtApplication` to start the application.
+- Run the main class, `ro.gandesc.jwt.JwtApplication` to start the application.
 
 ## Endpoints
 
