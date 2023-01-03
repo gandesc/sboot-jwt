@@ -1,4 +1,4 @@
-package ro.gandesc.jwt.controllers;
+package ro.gandesc.jwt.web.controllers;
 
 import ro.gandesc.jwt.service.ProductService;
 import ro.gandesc.jwt.domain.Product;
@@ -24,19 +24,19 @@ public class ProductController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('STAFF_MEMBER')")
+    @PreAuthorize("hasAuthority('products.read')")
     public Collection<Product> getProducts() {
         return productService.getAllProducts();
     }
 
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('ASSISTANT_MANAGER', 'MANAGER', 'ADMIN')")
+    @PreAuthorize("hasAuthority('products.create')")
     public void addProduct(@RequestBody Product product) {
         productService.addProduct(product);
     }
 
     @DeleteMapping("{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'MANAGER')")
+    @PreAuthorize("hasAuthority('products.delete')")
     public void removeProduct(@PathVariable long id) {
         productService.deleteProductById(id);
     }

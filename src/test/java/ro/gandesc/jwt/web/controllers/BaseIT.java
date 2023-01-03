@@ -1,4 +1,4 @@
-package ro.gandesc.quoth.jwt.controllers;
+package ro.gandesc.jwt.web.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;

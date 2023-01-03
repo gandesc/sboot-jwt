@@ -12,7 +12,10 @@ import ro.gandesc.jwt.repositories.security.AuthorityRepository;
 import ro.gandesc.jwt.repositories.security.RoleRepository;
 import ro.gandesc.jwt.repositories.security.UserRepository;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -30,16 +33,28 @@ public class DefaultDataLoader implements CommandLineRunner {
     }
 
     private void loadSecurityData() {
-        Authority createQuote = Authority.builder().permission("quote.create").build();
-        Authority updateQuote = Authority.builder().permission("quote.update").build();
-        Authority deleteQuote = Authority.builder().permission("quote.delete").build();
+        Authority createProduct = Authority.builder().permission("products.create").build();
+        Authority readProduct = Authority.builder().permission("products.read").build();
+        Authority updateProduct = Authority.builder().permission("products.update").build();
+        Authority deleteProduct = Authority.builder().permission("products.delete").build();
 
-        List<Authority> authorities = Arrays.asList(createQuote, updateQuote, deleteQuote);
-        authorityRepository.saveAll(authorities);
+        authorityRepository.saveAll(Arrays.asList(createProduct, readProduct, updateProduct, deleteProduct));
 
         Role adminRole = roleRepository.save(Role.builder()
-                .name("admin")
-                .authorities(new HashSet<>(authorities))
+                .name("ADMIN")
+                .authorities(Stream.of(createProduct, readProduct, updateProduct, deleteProduct)
+                        .collect(Collectors.toSet()))
+                .build());
+
+        Role managerRole = roleRepository.save(Role.builder()
+                .name("MANAGER")
+                .authorities(Stream.of(createProduct, readProduct, updateProduct)
+                        .collect(Collectors.toSet()))
+                .build());
+
+        Role staffRole = roleRepository.save(Role.builder()
+                .name("STAFF")
+                .authorities(Collections.singleton(readProduct))
                 .build());
 
         User adminUser = userRepository.save(User.builder()
@@ -48,6 +63,17 @@ public class DefaultDataLoader implements CommandLineRunner {
                 .roles(Collections.singleton(adminRole))
                 .build());
 
+        User managerUser = userRepository.save(User.builder()
+                .username("manager")
+                .password(passwordEncoder.encode("pass"))
+                .roles(Collections.singleton(managerRole))
+                .build());
+
+        User staffUser = userRepository.save(User.builder()
+                .username("staff")
+                .password(passwordEncoder.encode("pass"))
+                .roles(Collections.singleton(staffRole))
+                .build());
 
         log.info("loaded security data");
     }

@@ -1,4 +1,4 @@
-package ro.gandesc.jwt.controllers;
+package ro.gandesc.jwt.web.controllers;
 
 import java.util.Map;
 
