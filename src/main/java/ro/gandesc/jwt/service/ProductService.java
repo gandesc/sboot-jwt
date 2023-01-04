@@ -15,8 +15,8 @@ public class ProductService {
     private final AtomicInteger idCounter = new AtomicInteger(0);
 
     public ProductService() {
-        addProduct(new Product("First Product", "First Product Description"));
-        addProduct(new Product("Second Product", "Second Product Description"));
+        addProduct(Product.builder().name("First Product").description("First Product Description").build());
+        addProduct(Product.builder().name("Second Product").description("Second Product Description").build());
     }
 
     public Collection<Product> getAllProducts() {

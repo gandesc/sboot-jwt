@@ -1,7 +1,9 @@
-package ro.gandesc.jwt.controllers;
+package ro.gandesc.jwt.web.controllers;
 
 import ro.gandesc.jwt.WebSecurityConfig;
-import ro.gandesc.jwt.controllers.resource.LoginResult;
+import ro.gandesc.jwt.domain.security.Role;
+import ro.gandesc.jwt.domain.security.User;
+import ro.gandesc.jwt.web.controllers.resource.LoginResult;
 import ro.gandesc.jwt.security.JwtHelper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -52,10 +54,10 @@ public class AuthController {
             Map<String, String> claims = new HashMap<>();
             claims.put("username", username);
 
-            String authorities = userDetails.getAuthorities().stream()
-                    .map(GrantedAuthority::getAuthority)
+            String roles = ((User) userDetails).getRoles().stream()
+                    .map(Role::getName)
                     .collect(Collectors.joining(" "));
-            claims.put(WebSecurityConfig.AUTHORITIES_CLAIM_NAME, authorities);
+            claims.put(WebSecurityConfig.AUTHORITIES_CLAIM_NAME, roles);
             claims.put("userId", String.valueOf(1));
 
             String jwt = jwtHelper.createJwtForClaims(username, claims);
