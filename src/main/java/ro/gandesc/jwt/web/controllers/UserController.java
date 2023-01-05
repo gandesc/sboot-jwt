@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = {"${app.security.cors.origin}"})
 @RestController
-@RequestMapping("/user")
+@RequestMapping("users")
 public class UserController {
 
 	private final UserDetailsService userDetailsService;
@@ -22,7 +22,7 @@ public class UserController {
 		this.userDetailsService = userDetailsService;
 	}
 
-	@GetMapping
+	@GetMapping("authenticated")
 	public UserDetails getUser(Authentication authentication) {
 		return userDetailsService.loadUserByUsername(authentication.getName());
 	}

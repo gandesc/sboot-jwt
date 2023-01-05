@@ -18,13 +18,13 @@ public class UserControllerIT extends BaseIT {
         @Test
         @WithUserDetails("admin")
         public void getUserADMIN() throws Exception {
-            mockMvc.perform(get("/user"))
+            mockMvc.perform(get("/users/authenticated"))
                     .andExpect(status().isOk());
         }
 
         @Test
         public void getUserNOAUTH() throws Exception {
-            mockMvc.perform(get("/user"))
+            mockMvc.perform(get("/users/authenticated"))
                     .andExpect(status().isUnauthorized());
         }
     }
