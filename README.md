@@ -20,3 +20,8 @@ ReactJS, Angular, etc...
 - `/login` -> Public endpoint which returns a signed JWT for valid user credentials (username/password)
 - `/user` -> A protected endpoint which returns the user details of the 
 requesting user.
+
+## Keystore
+
+- generation: `keytool -keystore keystore.jks -genkey -alias jwtsignature -keyalg RSA`
+- verification: `keytool -v -list -keystore keystore.jks`
