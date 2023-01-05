@@ -24,9 +24,6 @@ public class UserController {
 
 	@GetMapping
 	public UserDetails getUser(Authentication authentication) {
-		JwtAuthenticationToken token = (JwtAuthenticationToken) authentication;
-		Map<String, Object> attributes = token.getTokenAttributes();
-
-		return userDetailsService.loadUserByUsername(attributes.get("username").toString());
+		return userDetailsService.loadUserByUsername(authentication.getName());
 	}
 }
