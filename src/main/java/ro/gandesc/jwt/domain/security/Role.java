@@ -31,7 +31,7 @@ public class Role {
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
 
-    @JsonIgnore //TODO create user dto
+    @JsonIgnore //TODO remove after adding dto
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 

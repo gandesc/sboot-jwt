@@ -31,7 +31,7 @@ public class Authority {
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
 
-    @JsonIgnore //TODO create user dto
+    @JsonIgnore //TODO remove after adding dto
     @ManyToMany(mappedBy = "authorities")
     private Set<Role> roles;
 }

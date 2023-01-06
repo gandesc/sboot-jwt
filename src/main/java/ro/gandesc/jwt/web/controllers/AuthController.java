@@ -1,13 +1,8 @@
 package ro.gandesc.jwt.web.controllers;
 
-import ro.gandesc.jwt.WebSecurityConfig;
-import ro.gandesc.jwt.domain.security.Role;
-import ro.gandesc.jwt.domain.security.User;
-import ro.gandesc.jwt.web.controllers.resource.LoginResult;
-import ro.gandesc.jwt.security.JwtHelper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,12 +12,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import ro.gandesc.jwt.WebSecurityConfig;
+import ro.gandesc.jwt.domain.security.Role;
+import ro.gandesc.jwt.domain.security.User;
+import ro.gandesc.jwt.security.JwtHelper;
+import ro.gandesc.jwt.web.controllers.resource.LoginResult;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
+@RequiredArgsConstructor
 @CrossOrigin(origins = {"${app.security.cors.origin}"})
 @RestController
 public class AuthController {
@@ -31,17 +31,8 @@ public class AuthController {
     private final UserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
 
-    public AuthController(JwtHelper jwtHelper, UserDetailsService userDetailsService,
-                          PasswordEncoder passwordEncoder) {
-        this.jwtHelper = jwtHelper;
-        this.userDetailsService = userDetailsService;
-        this.passwordEncoder = passwordEncoder;
-    }
-
     @PostMapping(path = "login", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-    public LoginResult login(
-            @RequestParam String username,
-            @RequestParam String password) {
+    public LoginResult login(@RequestParam String username, @RequestParam String password) {
 
         UserDetails userDetails;
         try {

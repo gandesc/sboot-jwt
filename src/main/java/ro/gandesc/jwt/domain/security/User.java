@@ -1,6 +1,7 @@
 package ro.gandesc.jwt.domain.security;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -29,6 +30,8 @@ public class User implements UserDetails, CredentialsContainer {
     private Integer id;
 
     private String username;
+
+    @JsonIgnore
     private String password;
 
     @Builder.Default

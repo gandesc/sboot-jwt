@@ -1,6 +1,7 @@
 package ro.gandesc.jwt.web.controllers;
 
-import ro.gandesc.jwt.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import ro.gandesc.jwt.services.ProductService;
 import ro.gandesc.jwt.domain.Product;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,15 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("products")
 public class ProductController {
 
     private final ProductService productService;
-
-    public ProductController(ProductService productService) {
-        this.productService = productService;
-    }
 
     @GetMapping
     @PreAuthorize("hasAuthority('products.read')")

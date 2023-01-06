@@ -1,4 +1,4 @@
-package ro.gandesc.jwt.service;
+package ro.gandesc.jwt.services;
 
 import ro.gandesc.jwt.domain.Product;
 import org.springframework.stereotype.Service;

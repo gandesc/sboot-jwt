@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
 import ro.gandesc.jwt.security.JwtGrantedAuthoritiesConverter;
@@ -17,8 +16,6 @@ import ro.gandesc.jwt.security.JwtGrantedAuthoritiesConverter;
 public class WebSecurityConfig {
 
     public static final String AUTHORITIES_CLAIM_NAME = "roles";
-
-    private final PasswordEncoder passwordEncoder;
 
     private final JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter;
 
@@ -42,7 +39,7 @@ public class WebSecurityConfig {
                                 .authenticated()
                 );
 
-        http.headers().frameOptions().sameOrigin();
+        http.headers().frameOptions().sameOrigin(); //for h2 frames
 
         // JWT Validation Configuration
         http.oauth2ResourceServer()
