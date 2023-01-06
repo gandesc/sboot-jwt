@@ -1,4 +1,4 @@
-package ro.gandesc.jwt.web.controllers.models;
+package ro.gandesc.jwt.web.models;
 
 import lombok.Getter;
 import lombok.Setter;

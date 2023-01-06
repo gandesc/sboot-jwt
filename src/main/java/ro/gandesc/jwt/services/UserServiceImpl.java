@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import ro.gandesc.jwt.domain.security.User;
 import ro.gandesc.jwt.repositories.security.UserRepository;
-import ro.gandesc.jwt.web.controllers.mappers.UserMapper;
-import ro.gandesc.jwt.web.controllers.models.UserDto;
+import ro.gandesc.jwt.web.mappers.UserMapper;
+import ro.gandesc.jwt.web.models.UserDto;
 
 import java.util.Optional;
 
