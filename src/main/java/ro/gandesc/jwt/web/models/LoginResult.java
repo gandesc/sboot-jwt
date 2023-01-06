@@ -1,4 +1,4 @@
-package ro.gandesc.jwt.web.controllers.resource;
+package ro.gandesc.jwt.web.models;
 
 import lombok.Data;
 import lombok.NonNull;

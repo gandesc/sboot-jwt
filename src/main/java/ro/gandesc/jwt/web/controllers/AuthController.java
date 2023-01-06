@@ -16,7 +16,7 @@ import ro.gandesc.jwt.WebSecurityConfig;
 import ro.gandesc.jwt.domain.security.Role;
 import ro.gandesc.jwt.domain.security.User;
 import ro.gandesc.jwt.security.JwtHelper;
-import ro.gandesc.jwt.web.controllers.resource.LoginResult;
+import ro.gandesc.jwt.web.models.LoginResult;
 
 import java.util.HashMap;
 import java.util.Map;
