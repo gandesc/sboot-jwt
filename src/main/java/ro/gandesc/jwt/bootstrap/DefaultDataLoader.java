@@ -52,11 +52,6 @@ public class DefaultDataLoader implements CommandLineRunner {
                         .collect(Collectors.toSet()))
                 .build());
 
-        Role staffRole = roleRepository.save(Role.builder()
-                .name("STAFF")
-                .authorities(Collections.singleton(readProduct))
-                .build());
-
         User adminUser = userRepository.save(User.builder()
                 .username("admin")
                 .password(passwordEncoder.encode("pass"))
@@ -69,11 +64,6 @@ public class DefaultDataLoader implements CommandLineRunner {
                 .roles(Collections.singleton(managerRole))
                 .build());
 
-        User staffUser = userRepository.save(User.builder()
-                .username("staff")
-                .password(passwordEncoder.encode("pass"))
-                .roles(Collections.singleton(staffRole))
-                .build());
 
         log.info("loaded security data");
     }
