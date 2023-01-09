@@ -18,8 +18,7 @@ ReactJS, Angular, etc...
 ## Endpoints
 
 - `/login` -> Public endpoint which returns a signed JWT for valid user credentials (username/password)
-- `/user` -> A protected endpoint which returns the user details of the 
-requesting user.
+- `/users/authenticated` -> A protected endpoint which returns the user details of the logged in user.
 
 ## Keystore
 
