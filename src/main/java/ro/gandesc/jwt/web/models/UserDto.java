@@ -15,12 +15,16 @@ public class UserDto {
     @Size(max = 255)
     private String username;
 
+    @NotNull
     private Boolean accountNonExpired;
 
+    @NotNull
     private Boolean accountNonLocked;
 
+    @NotNull
     private Boolean credentialsNonExpired;
 
+    @NotNull
     private Boolean enabled;
 
     private Timestamp createdAt;
