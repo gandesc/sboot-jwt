@@ -1,6 +1,5 @@
 package ro.gandesc.jwt.domain.security;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -26,10 +25,10 @@ public class Role {
 
     @CreationTimestamp
     @Column(updatable = false)
-    private Timestamp createdDate;
+    private Timestamp createdAt;
 
     @UpdateTimestamp
-    private Timestamp lastModifiedDate;
+    private Timestamp updatedAt;
 
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
