@@ -7,7 +7,7 @@ import org.springframework.web.server.ResponseStatusException;
 import ro.gandesc.jwt.domain.security.User;
 import ro.gandesc.jwt.repositories.security.UserRepository;
 import ro.gandesc.jwt.web.mappers.UserMapper;
-import ro.gandesc.jwt.web.models.UserDto;
+import ro.gandesc.jwt.web.models.AuthUserDto;
 
 import java.util.Optional;
 
@@ -17,11 +17,11 @@ public class UserServiceImpl {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
-    public UserDto getUser(String username) {
+    public AuthUserDto getUser(String username) {
        Optional<User> userOptional = userRepository.findByUsername(username);
 
        if(userOptional.isPresent()) {
-           return userMapper.userToUserDto(userOptional.get());
+           return userMapper.userToAuthUserDto(userOptional.get());
        } else {
            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found. username: " + username);
        }

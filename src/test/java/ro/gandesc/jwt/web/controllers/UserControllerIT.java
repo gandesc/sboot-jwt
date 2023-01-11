@@ -14,7 +14,7 @@ public class UserControllerIT extends BaseIT {
 
     @DisplayName("Get user")
     @Nested
-    class ListProducts {
+    class GetAuthenticatedUser {
         @Test
         @WithUserDetails("admin")
         public void getUserADMIN() throws Exception {
